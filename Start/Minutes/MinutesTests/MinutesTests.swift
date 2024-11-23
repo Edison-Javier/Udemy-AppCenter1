@@ -6,7 +6,6 @@
 //  Copyright © 2024 Microsoft. All rights reserved.
 //
 
-import Testing
 import XCTest
 @testable import Minutes
 
@@ -24,12 +23,11 @@ class MinutesTests : XCTest {
         super.tearDown()
     }
     
-    //@Test
     func testSerialization() {
         let serializedData = FileEntryStore.serialize(entryUnderTest)
         let entry = FileEntryStore.deserialize(serializedData!)
 
-        XCTAssertEqual(entry?.title, "Title", "Title does not match")
+        XCTAssertEqual(entry?.title, "Titles", "Title does not match")
         XCTAssertEqual(entry?.content, "Content", "Content does not match")
     }
 }
